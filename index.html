@@ -45,7 +45,68 @@
                     </p>
                 </section>
 
-                <section><p>hlo</p></section>
+                <section>
+
+                    <section>
+                        <h3>declaring variables</h3>
+                    </section>
+
+                    <section>
+                        <pre>
+                            <code data-trim>
+                                var name = 'John Smith';
+                            </code>
+                        </pre>
+                    </section>
+
+                    <section>
+                        <p>var has function scope</p>
+                    </section>
+
+                    <section>
+                        <pre>
+                            <code data-trim>
+function printNumbers () {
+    for(var i = 0; i < 5; i++) {
+        setTimeout(function(){
+            console.log(i);
+        }, i * 50);
+    }
+
+    console.log(i); // 5
+}
+                            </code>
+                        </pre>
+
+                        <a href="variables/var.html" target="_blank">example</a>
+                    </section>
+
+                    <section>
+                        <pre><code data-trim>
+                            let name = 'John Smith';
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <p>let has block scope</p>
+                    </section>
+
+                    <section>
+                        <pre><code>
+function printNumbers () {
+    for(let i = 0; i < 5; i++) {
+        setTimeout(function(){
+            console.log(i);
+        }, i * 50);
+    }
+
+    console.log(i); // Uncaught ReferenceError: i is not defined
+}
+                        </code></pre>
+
+                        <a href="variables/let.html" target="_blank">example</a>
+                    </section>
+                </section>
 
             </div>
 
