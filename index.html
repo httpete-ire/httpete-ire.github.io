@@ -106,7 +106,212 @@ function printNumbers () {
 
                         <a href="variables/let.html" target="_blank">example</a>
                     </section>
+
+                    <section>
+                        <pre><code>
+const API_URL = 'http://api.test.com';
+
+API_URL = 'https://www.google.ie/'; // Error!
+                        </code></pre>
+                    </section>
                 </section>
+
+                <section>
+
+                    <section>
+                        <h3>Prototypal inheritance</h3>
+                    </section>
+
+                    <section>
+                        <pre><code>
+function Person (name) {
+    this.name = name;
+    this.friends = [];
+}
+
+Person.prototype.greet = function() {
+    console.log('Hello my name is ' + this.name);
+};
+
+Person.prototype.addFriend  = function(friend) {
+    this.friends.push(friend);
+};
+
+Person.prototype.listFriends = function() {
+    this.friends.forEach(function(friend){
+        console.log(friend.name);
+    });
+};
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <pre><code>
+var person = new Person('John');
+
+person.addFriend(new Person('Fred'));
+person.addFriend(new Person('Jack'));
+
+person.listFriends();
+                        </code></pre>
+
+                        <a href="classes/prototype.html" target="_blank">example</a>
+                    </section>
+
+                    <section>
+                        <h3>Classes</h3>
+                    </section>
+
+                    <section>
+                        <pre><code>
+class Person {
+
+    constructor(name) {
+        this.name = name;
+        this.friends = [];
+    }
+
+    greet () {
+        console.log('Hello my name is ' + this.name);
+    }
+
+    addFriend (friend) {
+        this.friends.push(friend);
+    }
+
+    listFriends () {
+        this.friends.forEach(function(friend){
+            console.log(friend);
+        });
+    }
+
+};
+
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <pre><code>
+let person = new Person('John');
+
+person.addFriend(new Person('Fred'));
+person.addFriend(new Person('Jack'));
+
+person.listFriends();
+                        </code></pre>
+
+                        <a href="classes/class.html" target="_blank">example</a>
+                    </section>
+
+
+                    <section>
+                        <h3>Extending classes</h3>
+                    </section>
+
+                    <section>
+                        <pre><code>
+class Student extends Person {
+    constructor(name, course) {
+        super(name);
+        this.course = course;
+    }
+
+    greet () {
+        super.greet();
+        console.log('I am currently in ' + this.course);
+    }
+}
+                        </code></pre>
+                    </section>
+
+
+                    <section>
+                        <pre><code>
+let student = new Student('John', 'Computer Science');
+
+student.greet();
+
+student.addFriend(new Person('Amy'));
+student.addFriend(new Person('Jess'));
+
+student.listFriends();
+                        </code></pre>
+                        <a href="classes/extend.html" target="_blank">example</a>
+                    </section>
+
+
+                </section>
+
+                <section>
+
+
+                        <section>
+                            <h3>Arrow Functions</h3>
+                        </section>
+
+                        <section>
+                            <pre><code>
+function Person (name) {
+    this.name = name;
+
+    this.btn = document.getElementById('btn');
+
+    this.btn.addEventListener('click',function(){
+        alert('My name is ' + this.name);
+    },false);
+}
+
+var person = new Person('John');
+
+
+                            </code></pre>
+
+                            <a href="arrow/normal.html" target="_blank">example</a>
+                        </section>
+
+                        <section>
+                            <pre><code>
+class Person {
+    constructor(name) {
+        this.name = name;
+
+        this.btn = document.getElementById('btn');
+
+        this.btn.addEventListener('click', () => {
+            alert('My name is ' + this.name);
+        }, false);
+    }
+}
+
+let person = new Person('John');
+
+                            </code></pre>
+                            <a href="arrow/arrow.html" target="_blank">example</a>
+                        </section>
+
+
+                        <section>
+                            <pre><code>
+var numbers = [1, 5, 8, 3, 10];
+
+var over4 = numbers.filter(function(num){
+    return num > 4;
+});
+
+console.log(over4); // [5, 8, 10];
+
+
+let numbers = [1, 5, 8, 3, 10];
+
+let over4 = numbers.filter(num => num > 4);
+
+console.log(over4); // [5, 8, 10];
+
+                            </code></pre>
+                        </section>
+
+                    </scetion>
+
 
             </div>
 
