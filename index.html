@@ -310,8 +310,167 @@ console.log(over4); // [5, 8, 10];
                             </code></pre>
                         </section>
 
-                    </scetion>
+                    </section>
 
+                    <section>
+
+                    <section>
+                        <h3>Object Destructuring</h3>
+                    </section>
+
+
+                    <section>
+                        <pre><code>
+ver person = new Person('John');
+
+var name = person.name;
+var friends = person.friends;
+
+console.log(name); // 'John'
+console.log(friends); // [] :(
+
+                        </code></pre>
+                    </section>
+
+
+                    <section>
+                        <pre><code>
+let person = new Person('Pete');
+
+let { name, friends } = person;
+
+console.log(name); // 'Pete'
+console.log(friends); // [] :(
+
+                        </code></pre>
+                    </section>
+
+                    </section>
+
+
+                    <section>
+                        <section>
+                            <h3>Template Strings</h3>
+                        </section>
+
+                        <section>
+                            <pre><code>
+this.btn.addEventListener('click',function(){
+    alert('My name is ' + this.name);
+},false);
+                            </code></pre>
+                        </section>
+
+                        <section>
+                            <pre><code>
+this.btn.addEventListener('click', () => {
+    alert('My name is ${this.name}');
+}, false);
+                            </code></pre>
+                        </section>
+
+                        <section>
+                            <pre><code>
+class Employee {
+    constructor(name, location,  wage, hours) {
+        this.name;
+        this.location = location;
+        this.wage = wage;
+        this.hours = hours;
+    }
+
+    tellMore() {
+        return 'Hi, my name is ${this.name} and I work in ${this.location}';
+    }
+
+    earns() {
+        return 'I earn ${this.wage * this.hours} a week';
+    }
+}
+                            </code></pre>
+                        </section>
+                    </section>
+
+                    <section>
+                        <section>
+                            <h3>Modules</h3>
+                        </section>
+
+                        <section>
+                            <p>JavaScript has global scope</p>
+                        </section>
+
+                        <section>
+                            <pre><code>
+function Person () {
+    // do something
+}
+
+// window.Person
+                            </code></pre>
+                        </section>
+
+
+                        <section>
+
+                            <p>Person.js</p>
+                                <pre>
+                                    <code>
+                            }
+export class Person () {
+    // do something
+}
+</code>
+                                </pre>
+                        </section>
+
+                        <section>
+                            <p>app.js</p>
+                            <pre><code>
+import {Person} from 'Person';
+
+let person = new Person('Pete');
+                            </code></pre>
+                        </section>
+                    </section>
+
+
+                    <section>
+                        <section>
+                        <h3>Plenty more features</h3>
+                    </section>
+
+                    <section>
+                        <p>Native Promises</p>
+                        <p>Generators</p>
+                        <p>Map</p>
+                        <p>WeakMap</p>
+                        <p>Plenty more</p>
+                    </section>
+                    </section>
+
+
+                    <section>
+                        <section>
+                            <h3>How to use it</h3>
+                        </section>
+
+                        <section>
+                            <p>Firefox nightly</p>
+                            <p>Chrome Canary</p>
+                            <p>io.js</p>
+                            <p>node --harmony</p>
+
+                            <p>NPM module babel</p>
+                        </section>
+
+
+                        <section>
+                            <pre><code>
+babel app_es6.js -o app.js
+                            </code></pre>
+                        </section>
+                    </section>
 
             </div>
 
